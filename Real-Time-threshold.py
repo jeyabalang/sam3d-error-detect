@@ -113,9 +113,9 @@ while True:
   st.subheader('Temperature Over Time') 
   
   chart_placeholder.line_chart(data.set_index('timestamp')['temperature'])
-  st.subheader('Temperature Over Time') 
+  
   chart_placeholder.line_chart(data.set_index('timestamp')['humidity'])
-  st.subheader('humidity Over Time') 
+
   chart_placeholder.line_chart(data.set_index('timestamp')['vibration'])
   st.subheader('vibration Over Time') 
   chart_placeholder.line_chart(data.set_index('timestamp')['pressure'])
