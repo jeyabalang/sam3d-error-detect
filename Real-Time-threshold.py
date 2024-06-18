@@ -108,7 +108,7 @@ while True:
   data = pd.concat([data, new_data])
 # Display the updated dataframe 
   data_placeholder.dataframe(data)  
-  data_placeholder.dataframe(st.markdown({data}", unsafe_allow_html=True))
+  data_placeholder.dataframe(st.markdown({data}, unsafe_allow_html=True))
 # Display line charts of the data
   st.subheader('Temperature Over Time') 
   
