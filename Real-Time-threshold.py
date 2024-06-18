@@ -91,14 +91,22 @@ data_placeholder = st.empty()
 chart_placeholder = st.empty()
 # Initialize an empty dataframe
 data = pd.DataFrame(columns=['timestamp', 'temperature', 'humidity', 'vibration', 'pressure'])
-# Real-time data update loop while True:
-# Get new data new_data = get_data()
-# Append new data to the existing dataframe data = pd.concat([data, new_data])
-# Display the updated dataframe data_placeholder.dataframe(data)
+# Real-time data update loop 
+while True:
+# Get new data 
+  new_data = get_data()
+# Append new data to the existing dataframe 
+  data = pd.concat([data, new_data])
+# Display the updated dataframe 
+  data_placeholder.dataframe(data)
 # Display line charts of the data
-st.subheader('Temperature Over Time') chart_placeholder.line_chart(data.set_index('timestamp')['temperature'])
-st.subheader('Humidity Over Time') chart_placeholder.line_chart(data.set_index('timestamp')['humidity'])
-st.subheader('Vibration Over Time') chart_placeholder.line_chart(data.set_index('timestamp')['vibration'])
-st.subheader('Pressure Over Time') chart_placeholder.line_chart(data.set_index('timestamp')['pressure'])
-# Add a small delay to simulate real-time data streaming
-time.sleep(1) ```
+  st.subheader('Temperature Over Time') 
+  chart_placeholder.line_chart(data.set_index('timestamp')['temperature'])
+  st.subheader('Humidity Over Time') 
+  chart_placeholder.line_chart(data.set_index('timestamp')['humidity'])
+  st.subheader('Vibration Over Time') 
+  chart_placeholder.line_chart(data.set_index('timestamp')['vibration'])
+  st.subheader('Pressure Over Time')
+  chart_placeholder.line_chart(data.set_index('timestamp')['pressure'])
+  # Add a small delay to simulate real-time data streaming
+  time.sleep(1) ```
