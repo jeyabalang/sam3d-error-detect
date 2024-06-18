@@ -107,7 +107,8 @@ while True:
 # Append new data to the existing dataframe 
   data = pd.concat([data, new_data])
 # Display the updated dataframe 
-  data_placeholder.dataframe(st.markdown("<h1 class='display-4' {data}>,unsafe_allow_html=True))
+    
+  data_placeholder.dataframe(st.markdown(f"<p class='display-4'>Data: {data}</p>", unsafe_allow_html=True))
 # Display line charts of the data
   st.subheader('Temperature Over Time') 
   
