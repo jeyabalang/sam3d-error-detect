@@ -117,7 +117,7 @@ while True:
   chart_placeholder.line_chart(data.set_index('timestamp')['humidity'])
 
   chart_placeholder.line_chart(data.set_index('timestamp')['vibration'])
-  st.subheader('vibration Over Time') 
+  
   chart_placeholder.line_chart(data.set_index('timestamp')['pressure'])
   # Add a small delay to simulate real-time data streaming
   time.sleep(1) 
