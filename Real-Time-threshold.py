@@ -77,8 +77,8 @@ import time
 st.title('Real-Time Monitoring Dashboard for Additive Manufacturing')
 # Simulated data function 
 def get_data():
-# Simulate data from the additive manufacturing process return pd.DataFrame
-({
+# Simulate data from the additive manufacturing process 
+  return pd.DataFrame({
 'timestamp': [pd.Timestamp.now()],
 'temperature': [np.random.uniform(150, 250)], # example temperature range in Celsius
 'humidity': [np.random.uniform(20, 50)], 
