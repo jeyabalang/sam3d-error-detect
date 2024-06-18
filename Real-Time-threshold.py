@@ -112,11 +112,11 @@ while True:
   st.subheader('Temperature Over Time') 
   
   chart_placeholder.line_chart(data.set_index('timestamp')['temperature'])
-  st.subheader('Humidity Over Time') 
+  
   chart_placeholder.line_chart(data.set_index('timestamp')['humidity'])
-  st.subheader('Vibration Over Time') 
+  
   chart_placeholder.line_chart(data.set_index('timestamp')['vibration'])
-  st.subheader('Pressure Over Time')
+  
   chart_placeholder.line_chart(data.set_index('timestamp')['pressure'])
   # Add a small delay to simulate real-time data streaming
   time.sleep(1) 
