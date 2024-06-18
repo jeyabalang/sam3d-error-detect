@@ -110,7 +110,7 @@ while True:
   data_placeholder.dataframe(data)  
 
 # Display line charts of the data
-  st.subheader('Temperature Over Time') 
+  st.subheader('Temperature,humidity,vibration Over Time') 
   
   chart_placeholder.line_chart(data.set_index('timestamp')['temperature'])
   
