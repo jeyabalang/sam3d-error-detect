@@ -100,7 +100,7 @@ data_placeholder = st.empty()
 chart_placeholder = st.empty()
 # Initialize an empty dataframe
 data = pd.DataFrame(columns=['timestamp', 'temperature', 'humidity', 'vibration', 'pressure'])
-st.subheader('Temperature,humidity,vibration Over Time') 
+st.subheader('Temperature, Humidity,Vibration over time period for the Additive Manufacturing with line_chart') 
   
 # Real-time data update loop 
 while True:
