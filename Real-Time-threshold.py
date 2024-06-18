@@ -75,14 +75,20 @@ import numpy as np
 import time
 # Title of the Streamlit app
 st.title('Real-Time Monitoring Dashboard for Additive Manufacturing')
-# Simulated data function def get_data():
-# Simulate data from the additive manufacturing process return pd.DataFrame({
+# Simulated data function 
+def get_data():
+# Simulate data from the additive manufacturing process return pd.DataFrame
+({
 'timestamp': [pd.Timestamp.now()],
 'temperature': [np.random.uniform(150, 250)], # example temperature range in Celsius
-'humidity': [np.random.uniform(20, 50)], 'vibration': [np.random.uniform(0, 1)], 'pressure': [np.random.uniform(1, 10)]
+'humidity': [np.random.uniform(20, 50)], 
+'vibration': [np.random.uniform(0, 1)], 
+'pressure': [np.random.uniform(1, 10)]})
 # example humidity range in percentage # example vibration level
 # example pressure range in bar
-# Placeholder for the dataframe data_placeholder = st.empty() chart_placeholder = st.empty()
+# Placeholder for the dataframe
+data_placeholder = st.empty() 
+chart_placeholder = st.empty()
 # Initialize an empty dataframe
 data = pd.DataFrame(columns=['timestamp', 'temperature', 'humidity', 'vibration', 'pressure'])
 # Real-time data update loop while True:
