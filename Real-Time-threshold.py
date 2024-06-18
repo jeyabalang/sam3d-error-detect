@@ -100,6 +100,8 @@ data_placeholder = st.empty()
 chart_placeholder = st.empty()
 # Initialize an empty dataframe
 data = pd.DataFrame(columns=['timestamp', 'temperature', 'humidity', 'vibration', 'pressure'])
+st.subheader('Temperature,humidity,vibration Over Time') 
+  
 # Real-time data update loop 
 while True:
 # Get new data 
@@ -110,8 +112,7 @@ while True:
   data_placeholder.dataframe(data)  
 
 # Display line charts of the data
-  st.subheader('Temperature,humidity,vibration Over Time') 
-  
+ 
   chart_placeholder.line_chart(data.set_index('timestamp')['temperature'])
   
   chart_placeholder.line_chart(data.set_index('timestamp')['humidity'])
