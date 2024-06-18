@@ -75,6 +75,14 @@ import numpy as np
 import time
 # Title of the Streamlit app
 st.title('Real-Time Monitoring Dashboard for Additive Manufacturing')
+# Adding Bootstrap CSS
+st.markdown(
+    """
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    """,
+    unsafe_allow_html=True
+)
+
 # Simulated data function 
 def get_data():
 # Simulate data from the additive manufacturing process 
@@ -99,7 +107,7 @@ while True:
 # Append new data to the existing dataframe 
   data = pd.concat([data, new_data])
 # Display the updated dataframe 
-  data_placeholder.dataframe(data)
+  data_placeholder.dataframe(st.markdown("<h1 class='display-4' {data}>,unsafe_allow_html=True))
 # Display line charts of the data
   st.subheader('Temperature Over Time') 
   
