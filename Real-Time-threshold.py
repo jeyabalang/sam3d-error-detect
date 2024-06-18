@@ -79,11 +79,12 @@ st.title('Real-Time Monitoring Dashboard for Additive Manufacturing')
 def get_data():
 # Simulate data from the additive manufacturing process 
   return pd.DataFrame({
-'timestamp': [pd.Timestamp.now()],
-'temperature': [np.random.uniform(150, 250)], # example temperature range in Celsius
-'humidity': [np.random.uniform(20, 50)], 
-'vibration': [np.random.uniform(0, 1)], 
-'pressure': [np.random.uniform(1, 10)]})
+    'timestamp': [pd.Timestamp.now()],
+    'temperature': [np.random.uniform(150, 250)], # example temperature range in Celsius
+    'humidity': [np.random.uniform(20, 50)], 
+    'vibration': [np.random.uniform(0, 1)], 
+    'pressure': [np.random.uniform(1, 10)]
+   })
 # example humidity range in percentage # example vibration level
 # example pressure range in bar
 # Placeholder for the dataframe
@@ -101,7 +102,8 @@ while True:
   data_placeholder.dataframe(data)
 # Display line charts of the data
   st.subheader('Temperature Over Time') 
-  chart_placeholder.line_chart(data.set_index('timestamp')['temperature'])
+  
+  chart_placeholder.line_chart(data('timestamp')['temperature'])
   st.subheader('Humidity Over Time') 
   chart_placeholder.line_chart(data.set_index('timestamp')['humidity'])
   st.subheader('Vibration Over Time') 
