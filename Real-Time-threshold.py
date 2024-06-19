@@ -123,10 +123,6 @@ while True:
   # Add a small delay to simulate real-time data streaming
   time.sleep(1) 
 
-# Append new data to the existing 
-  dataframe data = pd.concat([data, new_data])
-# Display the updated dataframe
-  data_placeholder.dataframe(data)
 # Check for alerts
   if new_data['temperature'].values[0] > 240:
      st.error('Temperature is too high!')
