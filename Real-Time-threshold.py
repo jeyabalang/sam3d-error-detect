@@ -125,13 +125,13 @@ while True:
 
 # Check for alerts
   if new_data['temperature'].values[0] > 240:
-     st.error('The Temperature is very high—nearly over 240!')
+     st.error('At over 240!, the Temperature is extremely high{['Temperature'].values[0]}')
   if new_data['humidity'].values[0] > 45: 
-     st.error('The Humidity is very high—nearly over 45!')
+     st.error('At over 45!, the Humidity is extremely high{['Humidity'].values[0]}')
   if new_data['vibration'].values[0] > 0.8: 
-     st.error('The Vibration is very high—nearly over 0.8!')
+     st.error('At over 0.8!, the Humidity is extremely high{['Vibration'].values[0]})
   if new_data['pressure'].values[0] > 9: 
-    st.error('PThe Pressure is very high—nearly over 9!')
+    st.error('At over 9!, the Humidity is extremely high{['Pressure'].values[0]}')
     # Display line charts of the data
     chart_placeholder.line_chart(data.set_index('timestamp')['temperature'])
     chart_placeholder.line_chart(data.set_index('timestamp')['humidity'])
