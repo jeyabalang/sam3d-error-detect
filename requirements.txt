@@ -63,6 +63,7 @@
 # watchdog==4.0.1
 # google-cloud-aiplatform==1.54.1
 # gsutil
+google-cloud-pubsub
 google-cloud-storage
 google-cloud
 streamlit
