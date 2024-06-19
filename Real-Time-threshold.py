@@ -129,9 +129,9 @@ while True:
   if new_data['humidity'].values[0] > 45: 
      st.error('At over 45!, the Humidity is extremely high')
   if new_data['vibration'].values[0] > 0.8: 
-     st.error('At over 0.8!, the Humidity is extremely high')
+     st.error('At over 0.8!, the Vibration is extremely high')
   if new_data['pressure'].values[0] > 9: 
-    st.error('At over 9!, the Humidity is extremely high')
+    st.error('At over 9!, the Pressure is extremely high')
     # Display line charts of the data
     chart_placeholder.line_chart(data.set_index('timestamp')['temperature'])
     chart_placeholder.line_chart(data.set_index('timestamp')['humidity'])
