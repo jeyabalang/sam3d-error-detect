@@ -116,7 +116,7 @@ def publish_message(project_id, topic_id, message):
     publish_message(project_id, topic_id, message) 
 #### 3. Store Data in Firestore
 #Set up Firestore to store and query the data collected from your IoT devices.
-```python
+#```python
 from google.cloud import firestore
 def store_data(collection_name, data):
     db = firestore.Client()
