@@ -142,7 +142,8 @@ def get_data(collection_name):
     return pd.DataFrame(data)
 st.title('IoT-Based ERP Dashboard')
 
-# Fetch data from Firestore data = get_data('iot-data')
+# Fetch data from Firestore
+data = get_data('iot-data')
 if not data.empty: 
     st.write('Real-time IoT Data') 
     st.dataframe(data)
