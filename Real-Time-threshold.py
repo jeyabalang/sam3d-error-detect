@@ -125,21 +125,17 @@ while True:
 
 # Check for alerts
   if new_data['temperature'].values[0] > 240:
-     st.error('Temperature is too high!')
+     st.error('The Temperature is very high—nearly over 240!')
   if new_data['humidity'].values[0] > 45: 
-     st.error('Humidity is too high!')
+     st.error('The Humidity is very high—nearly over 45!')
   if new_data['vibration'].values[0] > 0.8: 
-     st.error('Vibration levels are too high!')
+     st.error('The Vibration is very high—nearly over 0.8!')
   if new_data['pressure'].values[0] > 9: 
-    st.error('Pressure is too high!')
+    st.error('PThe Pressure is very high—nearly over 9!')
     # Display line charts of the data
-    st.subheader('Temperature Over Time') 
     chart_placeholder.line_chart(data.set_index('timestamp')['temperature'])
-    st.subheader('Humidity Over Time') 
     chart_placeholder.line_chart(data.set_index('timestamp')['humidity'])
-    st.subheader('Vibration Over Time') 
     chart_placeholder.line_chart(data.set_index('timestamp')['vibration'])
-    st.subheader('Pressure Over Time') 
     chart_placeholder.line_chart(data.set_index('timestamp')['pressure'])
 
 # Add a small delay to simulate real-time data streaming
