@@ -143,7 +143,7 @@ while True:
     chart_placeholder.line_chart(data.set_index('timestamp')['pressure'])
 
 # Add a small delay to simulate real-time data streaming
-    time.sleep(1) ```
+    time.sleep(1) 
 ### Conclusion
 # This example provides a foundation for building a real-time monitoring dashboard for an additive manufacturing process using Streamlit. Customize the data fetching logic, visualizations, and additional features to match your specific needs. If you need further customization or encounter any issues, feel free to ask for additional help!
 # created by,
