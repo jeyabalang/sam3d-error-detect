@@ -43,8 +43,6 @@ erp_data = simulate_erp_data(start_date, end_date)
 # Simulate IoT sensor data
 iot_data = simulate_iot_data(start_date, end_date)
 
-# Simulate predictive maintenance data
-maintenance_data = simulate_maintenance_data(start_date, end_date)
 
 # Display data in main section
 st.title('ERP IoT Automate Workflow in Additive Manufacturing with Predictive Maintenance')
@@ -54,8 +52,6 @@ st.write(erp_data)
 st.subheader('IoT Sensor Data')
 st.write(iot_data)
 
-st.subheader('Predictive Maintenance Data')
-st.write(maintenance_data)
 
 # Workflow automation section
 st.header('Workflow Automation')
@@ -84,3 +80,9 @@ if selected_order:
 # Example: Interactive plot based on user input
 if st.checkbox('Show Pressure Data'):
     st.line_chart(iot_data.set_index('Date')['Pressure'])
+
+# Simulate predictive maintenance data
+maintenance_data = simulate_maintenance_data(start_date, end_date)
+
+st.subheader('Predictive Maintenance Data')
+st.write(maintenance_data)
