@@ -31,7 +31,7 @@ def simulate_maintenance_data(start_date, end_date):
         'Failure_Probability': [0.1, 0.05, 0.2]
     })
     #datas = pd.concat([data, pd.date_range(start=start_date, end=end_date, freq='W')], axis=1) 
-    return datas
+    return data
 
 # Sidebar for user inputs
 st.sidebar.header('User Inputs')
