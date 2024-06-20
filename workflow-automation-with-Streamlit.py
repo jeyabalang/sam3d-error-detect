@@ -30,7 +30,7 @@ def simulate_maintenance_data(start_date, end_date):
         'Component': ['Component-1', 'Component-2', 'Component-3'],
         'Failure_Probability': [0.1, 0.05, 0.2]
     })
-    data = pd.concat([data, 'Date': pd.date_range(start=start_date, end=end_date, freq='W')], axis=1) 
+    data = pd.concat([data, pd.date_range(start=start_date, end=end_date, freq='W')], axis=1) 
     return data
 
 # Sidebar for user inputs
