@@ -30,7 +30,7 @@ def simulate_maintenance_data(start_date, end_date):
         'Component': ['Component-1', 'Component-2', 'Component-3'],
         'Failure_Probability': [0.1, 0.05, 0.2]
     })
-    datas = pd.concat([data, pd.date_range(start=start_date, end=end_date, freq='W')], axis=1) 
+    #datas = pd.concat([data, pd.date_range(start=start_date, end=end_date, freq='W')], axis=1) 
     return datas
 
 # Sidebar for user inputs
@@ -68,7 +68,7 @@ if st.button('Run Scheduling Workflow'):
 
 st.header('Additional Features')
 
-# Add more features as needed
+# Add more features as neended
 # Example: Data visualization
 st.subheader('Visualization of IoT Data')
 st.line_chart(iot_data.set_index('Date')['Temperature'])
