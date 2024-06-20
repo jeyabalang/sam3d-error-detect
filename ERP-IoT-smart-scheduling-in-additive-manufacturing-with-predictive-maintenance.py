@@ -78,7 +78,7 @@ def simulate_erp_data(start_date, end_date):
 def simulate_iot_data(start_date, end_date):
     # Replace with your IoT data simulation logic
     data = pd.DataFrame({
-        #'Date': pd.date_range(start=start_date, end=end_date, freq='H'),
+        'Date': pd.date_range(start=start_date, end=end_date, freq='H'),
         'Temperature': [25.0 + 10 * (i % 24) / 24 for i in range((end_date - start_date).days * 24 + 1)],
         'Pressure': [1.0 + 0.5 * (i % 24) / 24 for i in range((end_date - start_date).days * 24 + 1)]
     })
