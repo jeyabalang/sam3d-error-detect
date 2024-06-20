@@ -26,10 +26,11 @@ def simulate_iot_data(start_date, end_date):
 def simulate_maintenance_data(start_date, end_date):
     # Replace with your predictive maintenance data simulation logic
     data = pd.DataFrame({
-        'Date': pd.date_range(start=start_date, end=end_date, freq='W'),
+        
         'Component': ['Component-1', 'Component-2', 'Component-3'],
         'Failure_Probability': [0.1, 0.05, 0.2]
     })
+    data = pd.concat([data, 'Date': pd.date_range(start=start_date, end=end_date, freq='W')], axis=1) 
     return data
 
 # Sidebar for user inputs
