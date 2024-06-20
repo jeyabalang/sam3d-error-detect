@@ -105,9 +105,6 @@ erp_data = simulate_erp_data(start_date, end_date)
 # Simulate IoT sensor data
 iot_data = simulate_iot_data(start_date, end_date)
 
-# Simulate predictive maintenance data
-maintenance_data = simulate_maintenance_data(start_date, end_date)
-
 # Display data in main section
 st.title('ERP IoT Smart Scheduling for Additive Manufacturing with Predictive Maintenance')
 st.subheader('ERP Data')
@@ -115,6 +112,9 @@ st.write(erp_data)
 
 st.subheader('IoT Sensor Data')
 st.write(iot_data)
+
+# Simulate predictive maintenance data
+maintenance_data = simulate_maintenance_data(start_date, end_date)
 
 st.subheader('Predictive Maintenance Data')
 st.write(maintenance_data)
