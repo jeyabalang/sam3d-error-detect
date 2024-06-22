@@ -135,6 +135,7 @@ store_data('iot-data', data)
 import streamlit as st
 import pandas as pd
 from google.cloud import firestore
+from PIL import Image
 def get_data(collection_name):
     db = firestore.Client()
     docs = db.collection(collection_name).stream() 
