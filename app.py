@@ -51,9 +51,9 @@ st.json(input_data)
 
 # Predict button
 if st.button("Predict Failure"):
-    project_id = "your_project_id"
-    region = "your_region"
-    endpoint_id = "your_endpoint_id"
+    project_id = "elliptical-city-426011-t7"
+    region = "=europe-west4"
+    endpoint_id = "3892002881489862656"
 
     try:
         prediction = get_model_prediction(input_data, project_id, region, endpoint_id)
