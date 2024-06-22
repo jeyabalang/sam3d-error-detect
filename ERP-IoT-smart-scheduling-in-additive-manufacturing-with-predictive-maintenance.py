@@ -93,6 +93,21 @@ def simulate_maintenance_data(start_date, end_date):
         'Failure_Probability': [0.1, 0.05, 0.2]
     })
     return data
+
+# Sidebar for user inputs
+st.sidebar.header('User Inputs')
+start_date = st.sidebar.date_input("Select Start Date")
+end_date = st.sidebar.date_input("Select End Date", value=pd.to_datetime('today'))
+
+# Simulate ERP data
+erp_data = simulate_erp_data(start_date, end_date)
+
+# Simulate IoT sensor data
+iot_data = simulate_iot_data(start_date, end_date)
+
+# Display data in main section
+st.title('ERP IoT Smart Scheduling for Additive Manufacturing with Predictive Maintenance')
+st.subheader('ERP Data')
 from PIL import Image
 # Load the logo image
 logo_path = "photo_2024-06-22 12.10.05.jpeg"  # Adjust the path to your logo file
@@ -125,20 +140,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Sidebar for user inputs
-st.sidebar.header('User Inputs')
-start_date = st.sidebar.date_input("Select Start Date")
-end_date = st.sidebar.date_input("Select End Date", value=pd.to_datetime('today'))
-
-# Simulate ERP data
-erp_data = simulate_erp_data(start_date, end_date)
-
-# Simulate IoT sensor data
-iot_data = simulate_iot_data(start_date, end_date)
-
-# Display data in main section
-st.title('ERP IoT Smart Scheduling for Additive Manufacturing with Predictive Maintenance')
-st.subheader('ERP Data')
 st.write(erp_data)
 
 st.subheader('IoT Sensor Data')
