@@ -1,7 +1,7 @@
 import streamlit as st
 from google.cloud import aiplatform
 from google.cloud.aiplatform.gapic.schema import predict
-from google.cloud.aiplatform_v1.schema.predict import instance
+
 
 import json
 import numpy as np
