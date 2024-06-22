@@ -3,13 +3,13 @@ from google.cloud import aiplatform
 from datetime import datetime
 
 # Initialize Google Cloud AI Platform 
-#aiplatform.init(project='elliptical-city-426011-t7', location='us-central1')
+aiplatform.init(project='elliptical-city-426011-t7', location='europe-west4 ')
 
 # Define a function to call the AI model on GCP 
 def predict_with_model(start_date, end_date, shift):
 
     # Create AI Platform prediction client
-    endpoint = aiplatform.Endpoint(ptendpoint_name='projects/elliptical-city-426011-t7/locations/us-central1/endpoints/your-endpoint-id')
+    endpoint = aiplatform.Endpoint(ptendpoint_name='projects/elliptical-city-426011-t7/locations/europe-west4/endpoints/3892002881489862656')
 
     # Prepare input data for the model
     instances = [{"start_date": start_date, "end_date": end_date, "shift": shift}]
