@@ -73,35 +73,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np 
 import time
-
-# Title of the Streamlit app
-st.title('Real-Time Monitoring Dashboard for Additive Manufacturing')
-# Adding Bootstrap CSS
-st.markdown(
-    """
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    """,
-    unsafe_allow_html=True
-)
-
-# Simulated data function 
-def get_data():
-# Simulate data from the additive manufacturing process 
-  return pd.DataFrame({
-    'timestamp': [pd.Timestamp.now()],
-    'temperature': [np.random.uniform(150, 250)], # example temperature range in Celsius
-    'humidity': [np.random.uniform(20, 50)], 
-    'vibration': [np.random.uniform(0, 1)], 
-    'pressure': [np.random.uniform(1, 10)]
-   })
-# example humidity range in percentage # example vibration level
-# example pressure range in bar
-# Placeholder for the dataframe
-data_placeholder = st.empty() 
-chart_placeholder = st.empty()
-# Initialize an empty dataframe
-data = pd.DataFrame(columns=['timestamp', 'temperature', 'humidity', 'vibration', 'pressure'])
-st.subheader('Temperature, Humidity, and Vibration for Additive Manufacturing Using a Line Chart Over Time')
 from PIL import Image
 # Load the logo image
 logo_path = "photo_2024-06-22 12.10.05.jpeg"  # Adjust the path to your logo file
@@ -133,6 +104,35 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+# Title of the Streamlit app
+st.title('Real-Time Monitoring Dashboard for Additive Manufacturing')
+# Adding Bootstrap CSS
+st.markdown(
+    """
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    """,
+    unsafe_allow_html=True
+)
+
+# Simulated data function 
+def get_data():
+# Simulate data from the additive manufacturing process 
+  return pd.DataFrame({
+    'timestamp': [pd.Timestamp.now()],
+    'temperature': [np.random.uniform(150, 250)], # example temperature range in Celsius
+    'humidity': [np.random.uniform(20, 50)], 
+    'vibration': [np.random.uniform(0, 1)], 
+    'pressure': [np.random.uniform(1, 10)]
+   })
+# example humidity range in percentage # example vibration level
+# example pressure range in bar
+# Placeholder for the dataframe
+data_placeholder = st.empty() 
+chart_placeholder = st.empty()
+# Initialize an empty dataframe
+data = pd.DataFrame(columns=['timestamp', 'temperature', 'humidity', 'vibration', 'pressure'])
+st.subheader('Temperature, Humidity, and Vibration for Additive Manufacturing Using a Line Chart Over Time')
 
 # Real-time data update loop 
 while True:
