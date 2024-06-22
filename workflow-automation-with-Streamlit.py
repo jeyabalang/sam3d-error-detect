@@ -62,7 +62,7 @@ st.markdown(
     """
     <style>
     .main {
-        background-color: brown;
+        background-color: yellow;
         font-family: Arial, sans-serif;
     }
     .title {
