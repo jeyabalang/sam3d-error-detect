@@ -1,42 +1,6 @@
 import streamlit as st
 from PIL import Image
 
-# Title of the app
-st.title("Welcome to TruPrognostics")
-
-# Load the logo image
-logo_path = "photo_2024-06-22 12.10.05.jpeg"  # Adjust the path to your logo file
-logo = Image.open(logo_path)
-
-# Display the logo
-st.image(logo, width=150)  # Adjust width as needed
-
-# CSS for additional formatting (optional)
-st.markdown(
-    """
-    <style>
-    .main {
-        background-color: #f5f5f5;
-        font-family: Arial, sans-serif;
-    }
-    .title {
-        font-size: 2em;
-        color: #333;
-        text-align: center;
-    }
-    .logo {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 150px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-# Add some text or other elements below the logo
-st.markdown("<div class='title'>Your partner in predictive maintenance for additive manufacturing.</div>", unsafe_allow_html=True)
 
 import streamlit as st
 import pandas as pd
@@ -82,6 +46,43 @@ erp_data = simulate_erp_data(start_date, end_date)
 
 # Simulate IoT sensor data
 iot_data = simulate_iot_data(start_date, end_date)
+
+# Title of the app
+st.title("Welcome to TruPrognostics")
+
+# Load the logo image
+logo_path = "photo_2024-06-22 12.10.05.jpeg"  # Adjust the path to your logo file
+logo = Image.open(logo_path)
+
+# Display the logo
+st.image(logo, width=150)  # Adjust width as needed
+
+# CSS for additional formatting (optional)
+st.markdown(
+    """
+    <style>
+    .main {
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+    }
+    .title {
+        font-size: 2em;
+        color: #333;
+        text-align: center;
+    }
+    .logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 150px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Add some text or other elements below the logo
+st.markdown("<div class='title'>Your partner in predictive maintenance for additive manufacturing.</div>", unsafe_allow_html=True)
 
 
 # Display data in main section
