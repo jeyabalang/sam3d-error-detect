@@ -94,6 +94,37 @@ def simulate_maintenance_data(start_date, end_date):
     })
     return data
 
+# Load the logo image
+logo_path = "photo_2024-06-22 12.10.05.jpeg"  # Adjust the path to your logo file
+logo = Image.open(logo_path)
+
+# Display the logo
+st.image(logo, width=150)  # Adjust width as needed
+
+# CSS for additional formatting (optional)
+st.markdown(
+    """
+    <style>
+    .main {
+        background-color: orange;
+        font-family: Arial, sans-serif;
+    }
+    .title {
+        font-size: 2em;
+        color: #333;
+        text-align: center;
+    }
+    .logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 150px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Sidebar for user inputs
 st.sidebar.header('User Inputs')
 start_date = st.sidebar.date_input("Select Start Date")
