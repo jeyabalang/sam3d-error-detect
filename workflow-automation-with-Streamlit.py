@@ -55,7 +55,7 @@ logo_path = "photo_2024-06-22 12.10.05.jpeg"  # Adjust the path to your logo fil
 logo = Image.open(logo_path)
 
 # Display the logo
-st.image(logo, width=150)  # Adjust width as needed
+st.image(logo, caption='Licensed by Sam3dp.tech', width=150)   # Adjust width as needed
 
 # CSS for additional formatting (optional)
 st.markdown(
