@@ -73,6 +73,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np 
 import time
+from PIL import Image
 # Title of the Streamlit app
 st.title('Real-Time Monitoring Dashboard for Additive Manufacturing')
 # Adding Bootstrap CSS
