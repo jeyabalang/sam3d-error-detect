@@ -121,7 +121,7 @@ st.markdown(
     """
     <style>
     .main {
-        background-color: orange;
+        background-color: pineapple;
         font-family: Arial, sans-serif;
     }
     .title {
