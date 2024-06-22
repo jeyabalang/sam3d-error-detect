@@ -70,3 +70,7 @@ google-cloud
 streamlit
 pandas
 numpy
+google-cloud-aiplatform
+
+
+
