@@ -70,11 +70,11 @@ google-cloud
 
 pandas
 numpy
-google-cloud-aiplatform
 streamlit==1.36.0
-google-cloud-aiplatform
+google-cloud-aiplatform==1.16.0
 scikit-learn
 tensorflow
+
 
 
 
