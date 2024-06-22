@@ -1,10 +1,8 @@
 import streamlit as st
 from google.cloud import aiplatform
-from google.cloud.aiplatform.gapic.schema import predict
-
-
+from google.protobuf.json_format import ParseDict
+from google.cloud.aiplatform_v1.types import PredictRequest
 import json
-import numpy as np
 
 # Initialize the AI Platform client
 def get_prediction_client():
@@ -19,13 +17,8 @@ def get_model_prediction(instance, project_id, region, endpoint_id):
     instance_dict = json.loads(json.dumps(instance))  # Convert instance to dict if necessary
     instances = [instance_dict]
 
-    parameters = predict.instance_params.Example()
-
-    response = client.predict(
-        endpoint=endpoint,
-        instances=instances,
-        parameters=parameters
-    )
+    request = PredictRequest(endpoint=endpoint, instances=instances)
+    response = client.predict(request=request)
 
     return response.predictions
 
@@ -54,7 +47,7 @@ st.json(input_data)
 # Predict button
 if st.button("Predict Failure"):
     project_id = "elliptical-city-426011-t7"
-    region = "=europe-west4"
+    region = "europe-west4"
     endpoint_id = "3892002881489862656"
 
     try:
