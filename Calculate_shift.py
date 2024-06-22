@@ -16,6 +16,9 @@ def predictive_maintenance_analysis(maintenance_status):
     else:
         return "All systems operational"
 
+
+# Title
+st.title("Additive Manufacturing Shift Calculator")
 # Load the logo image
 logo_path = "photo_2024-06-22 12.10.05.jpeg"  # Adjust the path to your logo file
 logo = Image.open(logo_path)
@@ -47,8 +50,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Title
-st.title("Additive Manufacturing Shift Calculator")
 
 # Inputs
 st.header("Input Parameters")
