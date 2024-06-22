@@ -93,7 +93,7 @@ def simulate_maintenance_data(start_date, end_date):
         'Failure_Probability': [0.1, 0.05, 0.2]
     })
     return data
-
+from PIL import Image
 # Load the logo image
 logo_path = "photo_2024-06-22 12.10.05.jpeg"  # Adjust the path to your logo file
 logo = Image.open(logo_path)
