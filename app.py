@@ -1,5 +1,6 @@
 import streamlit as st
 from google.cloud import aiplatform
+from google.cloud.aiplatform.gapic.schema import predict
 import json
 import numpy as np
 
@@ -12,9 +13,16 @@ def get_model_prediction(instance, project_id, region, endpoint_id):
     client = get_prediction_client()
     endpoint = client.endpoint_path(project=project_id, location=region, endpoint=endpoint_id)
 
+    # Ensure the instance is in the correct format
+    instance_dict = json.loads(json.dumps(instance))  # Convert instance to dict if necessary
+    instances = [instance_dict]
+
+    parameters = predict.instance_params.Example()
+
     response = client.predict(
         endpoint=endpoint,
-        instances=[instance],
+        instances=instances,
+        parameters=parameters
     )
 
     return response.predictions
@@ -43,19 +51,22 @@ st.json(input_data)
 
 # Predict button
 if st.button("Predict Failure"):
-    project_id = "elliptical-city-426011-t7"
-    region = "europe-west4"
-    endpoint_id = "3892002881489862656"
+    project_id = "your_project_id"
+    region = "your_region"
+    endpoint_id = "your_endpoint_id"
 
-    prediction = get_model_prediction(input_data, project_id, region, endpoint_id)
-    st.subheader("Prediction")
-    st.write(prediction)
+    try:
+        prediction = get_model_prediction(input_data, project_id, region, endpoint_id)
+        st.subheader("Prediction")
+        st.write(prediction)
 
-    # Further process the prediction if needed
-    if prediction[0]["label"] == 1:
-        st.error("Warning: Potential Failure Detected!")
-    else:
-        st.success("Machine is operating normally.")
+        # Further process the prediction if needed
+        if prediction[0]["label"] == 1:
+            st.error("Warning: Potential Failure Detected!")
+        else:
+            st.success("Machine is operating normally.")
+    except Exception as e:
+        st.error(f"Error: {e}")
 
 # Google Cloud AI Platform initialization
 if __name__ == "__main__":
