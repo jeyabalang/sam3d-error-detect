@@ -16,7 +16,7 @@ def predictive_maintenance_analysis(maintenance_status):
     else:
         return "All systems operational"
 
-
+from PIL import Image
 # Title
 st.title("Additive Manufacturing Shift Calculator")
 # Load the logo image
