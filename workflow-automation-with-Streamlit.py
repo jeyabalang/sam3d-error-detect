@@ -5,7 +5,7 @@ from PIL import Image
 st.title("Welcome to TruPrognostics")
 
 # Load the logo image
-logo_path = "logo.png"  # Adjust the path to your logo file
+logo_path = "photo_2024-06-22 12.10.05.jpeg"  # Adjust the path to your logo file
 logo = Image.open(logo_path)
 
 # Display the logo
