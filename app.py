@@ -1,55 +1,63 @@
 import streamlit as st
 from google.cloud import aiplatform
-from datetime import datetime
+import json
+import numpy as np
 
-# Initialize Google Cloud AI Platform 
-aiplatform.init(project='elliptical-city-426011-t7', location='europe-west4 ')
+# Initialize the AI Platform client
+def get_prediction_client():
+    return aiplatform.gapic.PredictionServiceClient()
 
-# Define a function to call the AI model on GCP 
-def predict_with_model(start_date, end_date, shift):
+# Function to get predictions from the deployed model
+def get_model_prediction(instance, project_id, region, endpoint_id):
+    client = get_prediction_client()
+    endpoint = client.endpoint_path(project=project_id, location=region, endpoint=endpoint_id)
 
-    # Create AI Platform prediction client
-    endpoint = aiplatform.Endpoint(ptendpoint_name='projects/elliptical-city-426011-t7/locations/europe-west4/endpoints/3892002881489862656')
+    response = client.predict(
+        endpoint=endpoint,
+        instances=[instance],
+    )
 
-    # Prepare input data for the model
-    instances = [{"start_date": start_date, "end_date": end_date, "shift": shift}]
+    return response.predictions
 
-    # Make predictionx  
-    prediction = endpoint.predict(instances=instances) 
-    return prediction
+# Streamlit app
+st.title("TruPrognostics Predictive Maintenance System")
 
-# Streamlit UI
-st.title("Additive Manufacturing Shift Calculator")
+# Input fields for user to enter data
+st.header("Enter Machine Data")
+temperature = st.number_input("Temperature (°C)", value=25.0)
+vibration = st.number_input("Vibration Level", value=0.1)
+pressure = st.number_input("Pressure (Pa)", value=101325)
+operational_hours = st.number_input("Operational Hours", value=100)
 
-# Date inputs
-start_date = st.date_input("Start Date")
-end_date = st.date_input("End Date")
+# Collect the input data
+input_data = {
+    "temperature": temperature,
+    "vibration": vibration,
+    "pressure": pressure,
+    "operational_hours": operational_hours
+}
 
-# Shift input
-shift = st.number_input("Shifts per Day", min_value=1, step=1)
+# Display input data
+st.subheader("Input Data")
+st.json(input_data)
 
-# Calculate button
-if st.button("Calculate Total Shifts"):
+# Predict button
+if st.button("Predict Failure"):
+    project_id = "elliptical-city-426011-t7"
+    region = "europe-west4"
+    endpoint_id = "3892002881489862656"
 
-    if start_date and end_date and shift:
-        start_date_str = start_date.strftime('%Y-%m-%d') 
-        end_date_str = end_date.strftime('%Y-%m-%d') 
-        total_days = (end_date - start_date).days + 1 
-        total_shifts = total_days * shift
+    prediction = get_model_prediction(input_data, project_id, region, endpoint_id)
+    st.subheader("Prediction")
+    st.write(prediction)
 
-# Display total shifts
-        st.write(f'Total Shifts: {total_shifts}')
-
-# Call the AI model for predictions
-        prediction = predict_with_model(start_date_str, end_date_str, shift) 
-        st.write("Model Prediction:", prediction)
-
+    # Further process the prediction if needed
+    if prediction[0]["label"] == 1:
+        st.error("Warning: Potential Failure Detected!")
     else:
-        st.error("Please enter valid dates and shift values.")
+        st.success("Machine is operating normally.")
 
-if __name__ == '__main__': 
-
-    st.write("Streamlit app is running!")
-
-
-
+# Google Cloud AI Platform initialization
+if __name__ == "__main__":
+    # Ensure the user has configured the Google Cloud environment properly
+    st.write("Ensure you have authenticated with Google Cloud and set the project ID and endpoint ID correctly.")
