@@ -39,6 +39,7 @@ input_data = [{
     "pressure": pressure,
     "operational_hours": operational_hours
 }]
+input_data = pd.DataFrame(input_data)
 
 # Display input data
 st.subheader("Input Data")
