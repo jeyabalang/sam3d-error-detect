@@ -3,7 +3,6 @@ from google.cloud import aiplatform
 from google.protobuf.json_format import ParseDict
 from google.cloud.aiplatform_v1.types import PredictRequest
 import json
-import pandas as pd
 
 # Initialize the AI Platform client
 def get_prediction_client():
