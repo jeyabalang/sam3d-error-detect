@@ -34,12 +34,12 @@ pressure = st.number_input("Pressure (Pa)", value=101325.00)
 operational_hours = st.number_input("Operational Hours", value=100.00)
 
 # Collect the input data
-input_data = [{
+input_data = {
     "temperature": temperature,
     "vibration": vibration,
     "pressure": pressure,
     "operational_hours": operational_hours
-}]
+}
 
 
 # Display input data
