@@ -44,7 +44,7 @@ input_data = {
 
 # Display input data
 st.subheader("Input Data")
-st.json(input_data)
+st.json(str(input_data))
 
 # Predict button
 if st.button("Predict Failure"):
