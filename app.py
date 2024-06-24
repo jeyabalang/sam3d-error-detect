@@ -29,8 +29,8 @@ st.title("TruPrognostics Predictive Maintenance System")
 st.header("Enter Machine Data")
 temperature = st.number_input("Temperature (°C)", value=25.0)
 vibration = st.number_input("Vibration Level", value=0.1)
-pressure = st.number_input("Pressure (Pa)", value=101325)
-operational_hours = st.number_input("Operational Hours", value=100)
+pressure = st.number_input("Pressure (Pa)", value=101325.00)
+operational_hours = st.number_input("Operational Hours", value=100.00)
 
 # Collect the input data
 input_data = {
