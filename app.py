@@ -33,16 +33,16 @@ pressure = st.number_input("Pressure (Pa)", value=101325.00)
 operational_hours = st.number_input("Operational Hours", value=100.00)
 
 # Collect the input data
-input_data = {
+input_data = [{
     "temperature": temperature,
     "vibration": vibration,
     "pressure": pressure,
     "operational_hours": operational_hours
-}
+}]
 
 # Display input data
 st.subheader("Input Data")
-st.json([input_data])
+st.json(input_data)
 
 # Predict button
 if st.button("Predict Failure"):
@@ -51,7 +51,7 @@ if st.button("Predict Failure"):
     endpoint_id = "3892002881489862656"
 
     try:
-        prediction = get_model_prediction([input_data], project_id, region, endpoint_id)
+        prediction = get_model_prediction(input_data, project_id, region, endpoint_id)
         st.subheader("Prediction")
         st.write(prediction)
 
