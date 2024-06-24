@@ -41,10 +41,10 @@ input_data = {
     "operational_hours": operational_hours
 }
 
-
+input_data=str(input_data)
 # Display input data
 st.subheader("Input Data")
-st.json(str(input_data))
+st.json(input_data)
 
 # Predict button
 if st.button("Predict Failure"):
