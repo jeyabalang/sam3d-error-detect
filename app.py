@@ -51,7 +51,7 @@ if st.button("Predict Failure"):
     endpoint_id = "3892002881489862656"
 
     try:
-        prediction = get_model_prediction(input_data, project_id, region, endpoint_id)
+        prediction = get_model_prediction([input_data], project_id, region, endpoint_id)
         st.subheader("Prediction")
         st.write(prediction)
 
