@@ -1,7 +1,6 @@
 import streamlit as st
 from google.cloud import aiplatform
 from google.auth import credentials
-from hologram import Context, Component, scene
 # Function to make predictions using the AI Platform
 def predict_with_model(project_id, endpoint_id, machine_data):
     client = aiplatform.gapic.PredictionServiceClient()
@@ -50,18 +49,6 @@ st.write("")
 st.write("Follow Us On:LinkedIn information Solutions Vision Imprint Blog About Company +49 (0)1622443256 ,Info@sam3dp.tech Gubener Strasse 3B 10243 Berlin ")
 st.write('This Streamlit app demonstrates predictive maintenance for additive manufacturing using Google Cloud AI Platform.')
 st.write('Learn more about this project at https://www.sam3dp.tech')  # Replace with your project URL
-# Hologram Component
-ctx = Context()
-with scene(heading="3D Machine Predictive Maintenance"):
-    ctx.header("Visualizing Machine Learning Models")
-
-    # Add your hologram content here
-    ctx.paragraph("Describe your hologram visualization here.")
-
-hologram_html = ctx.compile()
-
-# Render Hologram
-st.components.v1.html(hologram_html, width=900, height=600)
 
 if st.button("Submit"):
     if not project_id or not endpoint_id or not google_id:
