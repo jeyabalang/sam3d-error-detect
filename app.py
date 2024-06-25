@@ -1,7 +1,7 @@
 import streamlit as st
 from google.cloud import aiplatform
 from google.auth import credentials
-
+from hologram import Context, Component, scene
 # Function to make predictions using the AI Platform
 def predict_with_model(project_id, endpoint_id, machine_data):
     client = aiplatform.gapic.PredictionServiceClient()
