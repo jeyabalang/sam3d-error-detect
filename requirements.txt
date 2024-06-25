@@ -68,6 +68,7 @@ google-cloud-pubsub
 google-cloud-storage
 google-cloud
 
+pydeck
 pandas
 numpy
 streamlit==1.36.0
