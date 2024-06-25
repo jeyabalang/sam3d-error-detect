@@ -27,15 +27,24 @@ def predict_with_model(project_id, endpoint_id, machine_data):
 
 # Streamlit UI components
 st.title("TruPrognostics Predictive Maintenance System")
+import streamlit as st
 
-project_id = st.text_input("Google Cloud Project ID")
-endpoint_id = st.text_input("AI Platform Endpoint ID")
-google_id = st.text_input("Google ID")
+# Set the layout to wide mode
+st.set_page_config(layout="wide")
 
-machine_data = {}
-machine_data['temperature'] = st.number_input("Temperature", step=0.1)
-machine_data['pressure'] = st.number_input("Pressure", step=0.1)
-machine_data['vibration'] = st.number_input("Vibration", step=0.01)
+# Use columns to organize elements
+left_column, right_column = st.columns(2)
+
+# Input fields in the left column
+with left_column:
+   project_id = st.text_input("Google Cloud Project ID")
+   endpoint_id = st.text_input("AI Platform Endpoint ID")
+   google_id = st.text_input("Google ID")
+with right_column:
+    machine_data = {}
+    machine_data['temperature'] = st.number_input("Temperature", step=0.1)
+    machine_data['pressure'] = st.number_input("Pressure", step=0.1)
+    machine_data['vibration'] = st.number_input("Vibration", step=0.01)
 
 if st.button("Submit"):
     if not project_id or not endpoint_id or not google_id:
