@@ -134,6 +134,18 @@ chart_placeholder = st.empty()
 data = pd.DataFrame(columns=['timestamp', 'temperature', 'humidity', 'vibration', 'pressure'])
 st.subheader('Temperature, Humidity, and Vibration for Additive Manufacturing Using a Line Chart Over Time')
 
+# Create the hologram-like effect
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection='3d')
+
+ax.plot_surface(data['timestamp'], data['humidity'], data['pressure'], cmap='viridis')
+
+# Move the plot window outside the figure window to give a hologram effect
+manager = plt.get_current_fig_manager()
+manager.window.move(2000, 200)
+
+plt.show()
+
 # Real-time data update loop 
 while True:
 # Get new data 
