@@ -74,6 +74,7 @@ import pandas as pd
 import numpy as np 
 import time
 from PIL import Image
+import matplotlib.pyplot as plt
 # Load the logo image
 logo_path = "photo_2024-06-22 12.10.05.jpeg"  # Adjust the path to your logo file
 logo = Image.open(logo_path)
