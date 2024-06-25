@@ -31,6 +31,8 @@ import streamlit as st
 
 
 
+
+
 # Input fields in the left column
 
 project_id = st.sidebar.text_input("Google Cloud Project ID")
@@ -50,5 +52,10 @@ if st.button("Submit"):
             # Make prediction
             prediction = predict_with_model(project_id, endpoint_id, machine_data)
             st.write("Prediction:", prediction)
+            
         except Exception as e:
             st.error(f"Error: {e}")
+# Footer
+st.write('---')
+st.write('This Streamlit app demonstrates predictive maintenance for additive manufacturing using Google Cloud AI Platform.')
+st.write('Learn more about this project at yourwebsite.com')  # Replace with your project URL
