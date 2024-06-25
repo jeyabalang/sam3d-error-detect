@@ -44,6 +44,9 @@ machine_data['temperature'] = st.number_input("Temperature", step=0.1)
 machine_data['pressure'] = st.number_input("Pressure", step=0.1)
 machine_data['vibration'] = st.number_input("Vibration", step=0.01)
 # Footer
+st.write("")
+st.write("")
+st.write("")
 st.write("Follow Us On:LinkedIn information Solutions Vision Imprint Blog About Company +49 (0)1622443256 Info@sam3dp.tech Gubener Strasse 3B 10243 Berlin ")
 st.write('This Streamlit app demonstrates predictive maintenance for additive manufacturing using Google Cloud AI Platform.')
 st.write('Learn more about this project at https://www.sam3dp.tech')  # Replace with your project URL
