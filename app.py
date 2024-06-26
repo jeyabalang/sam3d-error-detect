@@ -9,8 +9,7 @@ def predict_with_model(project_id, endpoint_id, machine_data):
     endpoint = client.endpoint_path(
         project=project_id,
         location='asia-south1-c',
-        endpoint=endpoint_id
-    )
+        endpoint=endpoint_id )
 
     # Input data in the format expected by the model
     instance = {"data": machine_data}
