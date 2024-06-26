@@ -8,7 +8,7 @@ def predict_with_model(project_id, endpoint_id, machine_data):
     # The AI Platform endpoint path
     endpoint = client.endpoint_path(
         project=project_id,
-        location='eu-west4',
+        location='asia-south1-c',
         endpoint=endpoint_id
     )
 
