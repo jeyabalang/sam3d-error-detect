@@ -111,7 +111,7 @@ def publish_message(project_id, topic_id, message):
     future.result()
     # Example usage
     project_id = 'elliptical-city-426011-t7'
-    topic_id = 'Praedectio1-topic-sub'
+    topic_id = 'Praedectio1-topic'
     message = 'Hello, IoT!'
     publish_message(project_id, topic_id, message) 
 #### 3. Store Data in Firestore
